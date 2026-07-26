@@ -1,24 +1,92 @@
 aid: dasient
-name: Dasient *
-description: 'Dasient * is a company surfaced as a portfolio company of gv and added to the API Evangelist
-  network as a stub for enrichment. Sector: enterprise. This profile is a lead awaiting the enrichment
-  pipeline.'
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/dasient.png
+name: Dasient
+description: 'Dasient was a web anti-malware company founded in 2008 in Sunnyvale, California by
+  ex-Google engineers Neil Daswani and Shariq Rizvi with McKinsey consultant Ameet Ranadive. It sold
+  cloud-based protection against web-based malware and malvertising, scanning customer websites and ad
+  networks with its Malware Analysis Platform. It shipped a JSON-RPC over HTTP "Web Protection API" that
+  let customers schedule and run on-demand malware scans of individual domains and URLs, with tiered
+  pricing by scans per day. Twitter acquired Dasient in January 2012 for a reported $19.1 million; the
+  product was retired, dasient.com went dark in late 2012, and the domain is now a parked defensive
+  registration held by Twitter. This company is DEFUNCT and has no live API surface to enrich.'
 url: https://raw.githubusercontent.com/api-evangelist/dasient/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - gv
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: defunct
+x-tier-reason: acquired-and-shut-down
+x-status: defunct
+x-founded: '2008'
+x-founders:
+- Neil Daswani
+- Shariq Rizvi
+- Ameet Ranadive
+x-headquarters: Sunnyvale, California, United States
+x-acquired-by: Twitter
+x-acquired-date: '2012-01'
+x-acquired-price-usd: 19100000
+x-defunct-evidence:
+- kind: dns
+  detail: dasient.com NS delegated to twtrdns.net; A records in 104.244.42.0/24 (ARIN
+    TWITTER-NETWORK, Twitter Inc.); registrar MarkMonitor
+- kind: http
+  detail: https://dasient.com/ and https://www.dasient.com/ both time out with no HTTP
+    response (curl exit 28) — the domain is parked, not serving
+- kind: dns-hygiene
+  detail: stale SPF (v=spf1 ip4:67.221.38.179 ip4:67.221.38.250 a mx ptr ~all) pointing at
+    long-dead hosts; no DMARC record; no CAA record
+- kind: archive
+  detail: web.archive.org last 200 capture of dasient.com is 2012-11-12; captures after
+    2012-12-06 are 301s or misses
+x-historical-api:
+  name: Dasient Web Protection API
+  protocol: JSON-RPC over HTTP
+  description: Programmatic access to the Dasient Malware Analysis Platform for customized
+    on-demand malware scans of individual domains or URLs, with customer-controlled scan
+    frequency, crawl depth, and daily capacity limits.
+  authentication: shared per-subscription API credentials (Dasient customers or evaluation
+    customers only)
+  pricing: tiered by number of scans per day
+  sample_client: PHP
+  retired: '2012'
+  archived_page: http://web.archive.org/web/20120503214601/http://www.dasient.com/product-services/web-protection-API/
+  archived_faq: http://web.archive.org/web/2012/http://www.dasient.com/documents/Dasient_WebProtection_API_FAQs_F.pdf
+  note: Retired with the Twitter acquisition. Recorded for the historical record only — there is
+    no live endpoint, no published specification, and no successor API. Deliberately NOT modeled
+    as an apis[] entry, because the surface no longer exists.
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Enterprise
+- Security
+- Malware
+- Web Security
+- Anti-Malware
+- Malvertising
+- Defunct
+- Acquired
 apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 0
+  pass: local-v1
