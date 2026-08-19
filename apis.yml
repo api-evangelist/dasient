@@ -66,7 +66,7 @@ x-historical-api:
   note: Retired with the Twitter acquisition. Recorded for the historical record only — there is
     no live endpoint, no published specification, and no successor API. Deliberately NOT modeled
     as an apis[] entry, because the surface no longer exists.
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-20'
 tags:
